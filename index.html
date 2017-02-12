@@ -1,14 +1,80 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Final Year.</title>
-    <meta charset="utf-8">
+    <meta>
         <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/custom.css">
     </head>
-    <div>
-        <div class="text-center">
-            <button type="button" form="SignUpForm" value="SignUp" id="signUpButton">Sign Up</button>
-            <button type="button" form="LoginForm" value="LogIn" id="loginButton">Login</button>
+    <div class="form">
+        <ul class="tab-group">
+            <li class="tab-active"><a href=#signUp>Sign Up</li>
+            <li class="tab"><a href=#login>Log In</li>
+        </ul>
+        
+        <div class="tab-content">
+            <div id="signup">
+                <h1>Sign Up for Free</h1>
+                
+                <form action="/" method="post">
+                
+                <div class="top-row">
+                    <div class="field-wrap">
+                        <label>
+                        First Name: <span class="req"></span>
+                        </label>
+                        <input type="text" required autocomplete="off"/>
+                    </div>
+                    
+                    <div class="field-wrap">
+                        <label>
+                        Last Name: <span class="req"></span>
+                        </label>
+                        <input type="text"required autocomplete="off">
+                    </div>
+                </div>
+                
+                <div class="field-wrap">
+                    <label>
+                        Email Address <span></span>
+                    </label>
+                    <input type="email"required autocomplete="off"/>
+                </div>
+                
+                <div class="field-wrap">
+                    <label>
+                        Set a Password<span></span>
+                    </label>
+                    <input type="password"required autocomplete="off"/>
+                </div>
+                
+                <button type="submit" class="button button-block">Get Started</button>
+                </form>
+            
+            </div>
+            
+            <div id="login">
+                <h1>Welcome Back!</h1>
+                
+                <form action="/" method="post">
+                
+                    <div class="field-wrap">
+                        <label>
+                        Email Address<span class="req"></span>
+                        </label>
+                        <input type="email" required autocomplete="off"/>
+                    </div>
+                    
+                    <div>
+                        <label>
+                        Password<span></span>
+                        </label>
+                            <input type="password" required autocomplete="off"/>
+                    </div>
+                    
+                    <p class="forgot"><a href="#">Forgot Password?</a></p>
+                    
+                    <button class="button button-block">Log In</button>
+                </form>
             </div>
         </div>
     </div>
