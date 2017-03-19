@@ -1,0 +1,23 @@
+#complaint {
+    padding-left: 100px;
+}
+#submitButton {
+    margin-left: 150px;
+    height: 40px;
+    width: 120px;
+    margin-top: 300px;
+    font-size: 28px;
+    background: none;
+    box-shadow: none
+}
+textarea {
+    border: solid;
+    border-color: dodgerblue;
+    text-align: center;
+    height: 250px;
+    width: 590px;
+    margin-top: 15px;
+    margin-left: 100px;
+    font-size: 28px;
+    position: fixed;
+}
