@@ -26,6 +26,9 @@
     margin-top: 390px;
     font-size: 20px;
 }
+#mySideNav a {
+    text-align: center;
+}
 p {
     margin-left: 120px;
 }
