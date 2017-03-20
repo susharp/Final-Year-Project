@@ -18,9 +18,13 @@
             <span onClick="openNav()">&#9776;</span>
         </div>
         <div id="complaint">
-            <textarea id="postComplaint"  placeholder="Type your complaints here."></textarea>
+            <textarea id="postComplaint" placeholder="Write to Dean student welfare" id= "postComplaint"></textarea>
             <input type="submit" value="Submit" id="submitButton">
-            <input type="button" id="clearButton" value="Clear">
+            <input type="button" id="clearButton" onClick="clear" value="Clear">
+        </div>
+        <div>
+            <marquee id="note">Note: Replies from DSW are truely confidential and hence will be reverted back via email.
+            </marquee>
         </div>
         <script src="js/dsw.js"></script>
     </body>
