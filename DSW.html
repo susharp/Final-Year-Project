@@ -1,34 +1,49 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" href="css/complaint.css">
-        <link rel="stylesheet" href="css/dsw.css">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-    </head>
-    <body>
-        <div id="mySideNav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="#">Home</a>
-            <a href="#">Post a Complaint</a>
-            <a href="#">Check Status</a>
-            <a href="#postComplaint">Write to DSW</a>
-        </div>
-        <div id="main">
-        <h2>Amity Complaint System</h2>
-            <p>The new digital complaint system for Amity University, Rajsthan</p>
-            <span onClick="openNav()">&#9776;</span>
-        </div>
-        <div id="complaint">
-            <p><b>You can write a personal message to <mark>Dean Student Welfare</mark>.</b></p>
-            <textarea id="postComplaint" placeholder="Write to Dean student welfare" id= "postComplaint"></textarea>
-            <input type="submit" value="Submit" class="btn btn-success" id="submitButton">
-           <!-- <input type="button" id="clearButton" onClick="clear" value="Clear"> -->
-        </div>
-        <div>
-            <marquee id="note"><b>Note: Replies from DSW are truely confidential and hence will be reverted back via email.</b>
-            </marquee>
-        </div>
-        <script src="js/dsw.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-    </body>
+<html ng-app="DSWMatter">
+<head>
+    <link rel="stylesheet" href="css/complaint.css">
+    <link rel="stylesheet" href="css/dsw.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/dsw.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/DSWController.js"></script>
+</head>
+<body>
+<!--Navbar Item-->
+<nav>
+    <div class="navbar-inner">
+        <img src="logo.png" width="100%" height="100%">
+    </div>
+</nav>
+<!--Navbar Item-->
+
+<div id="mySideNav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#">Home</a>
+    <a href="postComplaint.html">Post a Complaint</a>
+    <a href="#">Check Status</a>
+    <a href="#postComplaint">Write to DSW</a>
+</div>
+<div id="main">
+    <span onClick="openNav()">&#9776;</span>
+</div>
+<div id="complaint" class="form-group text-center">
+    <h2>You can write a personal message to <mark id="mark">Dean Student Welfare</mark>.</h2>
+    <textarea id="postComplaint" class="form-control text-center" placeholder="Write to Dean student welfare" ng-model="complaint"></textarea>
+</div>
+<div class="text-center">
+    <h3>Complaint looks like:</h3>
+    <p id="preview">{{complaint}}</p>
+</div>
+<div class="text-center">
+    <input type="submit" value="Submit" class="btn btn-success" id="submitButton">
+    <input type="button" id="clearButton" class="btn btn-danger" onClick="clear" value="Clear">
+</div>
+<div>
+    <marquee id="note"><b>Note: Replies from DSW are truely confidential and hence will be reverted back via email.</b>
+    </marquee>
+</div>
+</body>
 </html>
