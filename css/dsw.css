@@ -1,37 +1,25 @@
-#complaint {
-}
-#complaint p {
-    font-size: 21px;
-}
-#note {
-    font-size: 20px;
-}
-#mySideNav a {
-    text-align: center;
-}
-p {
-    margin-left: 120px;
-}
 textarea {
-    border: solid;
     border-color: dodgerblue;
-    text-align: center;
+    text-align: start;
     margin-top: 15px;
     font-size: 36px;
     resize: none;
-    width: 50px;
+    height: 20%;
 }
-
-#postComplaint {
-    resize: none;
+p {
+    text-align: left;
 }
-
 #mark {
     background-color: #F6A924;
     color: darkblue;
+    font-weight: 500;
 }
-
-#preview {
-    word-wrap: break-word;
+#submit-button {
+    margin-top: 10px;
 }
-
+#note {
+    font-size: 16px;
+}
+.text-pre-wrap {
+    white-space: pre-wrap !important;
+}

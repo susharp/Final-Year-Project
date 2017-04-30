@@ -53,3 +53,51 @@ span {
         font-size: 18px;
     }
 }
+
+.dropdown-container {
+    position: relative;
+}
+.dropdown-menu {
+    position: absolute;
+    float: none;
+    left: 50%;
+}
+.user {
+    background-color: #2b669a;
+}
+.info-button {
+    margin-left: 20px;
+    margin-top: 5px;
+}
+#dropdown-top {
+    position: absolute;
+    margin-top: 3%;
+}
+#dropdown {
+    position: absolute;
+    float: none;
+    margin-left: 42%;
+}
+#dropdown-submenu {
+    position: absolute;
+    float: none;
+    margin-left: 18%;
+}
+#main {
+    margin-top: -20px;
+}
+#user-name {
+    margin-top: 10px;
+    margin-right: 10px;
+}
+form {
+    margin-top: -30px;
+}
+textarea {
+    resize: none;
+    width: 60%;
+    height: 100px;
+}
+.top {
+    margin-top: 10px;
+}
