@@ -1,49 +1,70 @@
 <!DOCTYPE html>
 <html ng-app="DSWMatter">
 <head>
+    <!--Css-->
     <link rel="stylesheet" href="css/complaint.css">
-    <link rel="stylesheet" href="css/dsw.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/dsw.css">
+    <script src="js/jquery-3.1.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/angular.min.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/dsw.js"></script>
-    <script src="js/bootstrap.min.js"></script>
     <script src="js/DSWController.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.dropdown-submenu a.test').on("click", function(e){
+                $(this).next('ul').toggle();
+                e.stopPropagation();
+                e.preventDefault();
+            });
+        });
+    </script>
 </head>
-<body>
-<!--Navbar Item-->
-<nav>
+<body ng-controller="DSWController">
+<nav class="navbar">
     <div class="navbar-inner">
-        <img src="logo.png" width="100%" height="100%">
+        <a><img src="logo.png" width="100%" height="100%"></a>
     </div>
 </nav>
-<!--Navbar Item-->
-
 <div id="mySideNav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="#">Home</a>
     <a href="postComplaint.html">Post a Complaint</a>
     <a href="#">Check Status</a>
-    <a href="#postComplaint">Write to DSW</a>
+    <a href="DSW.html">Write to DSW</a>
 </div>
 <div id="main">
+    <div class="container-fluid">
+        <div>
+            <div class="dropdown-container">
+                <button class="btn btn-default pull-right info-button dropdown-toggle" data-toggle="dropdown">&#9776;</button>
+                <ul class="dropdown-menu pull-right" id="dropdown-top">
+                    <li><a href="#" tabindex="-1">Change Profile</a></li>
+                    <li><a href="#" tabindex="-1">Sign out</a></li>
+                </ul>
+            </div>
+            <img src="prateek1.jpg" class="img-circle img-thumbnail pull-right" width="40" height="50">
+            <label id="user-name" class="pull-right">Prateek Gogia</label>
+        </div>
+    </div>
     <span onClick="openNav()">&#9776;</span>
-</div>
-<div id="complaint" class="form-group text-center">
-    <h2>You can write a personal message to <mark id="mark">Dean Student Welfare</mark>.</h2>
-    <textarea id="postComplaint" class="form-control text-center" placeholder="Write to Dean student welfare" ng-model="complaint"></textarea>
-</div>
-<div class="text-center">
-    <h3>Complaint looks like:</h3>
-    <p id="preview">{{complaint}}</p>
-</div>
-<div class="text-center">
-    <input type="submit" value="Submit" class="btn btn-success" id="submitButton">
-    <input type="button" id="clearButton" class="btn btn-danger" value="Clear">
+    <h3 class="text-center">Write a personal message to <span id="mark">Dean Student Welfare</span></h3>
+    <div>
+        <textarea class="form-control text-center" placeholder="Write here." ng-model="complaint"></textarea>
+    </div>
+    <div>
+        <h4><b>Your complaint looks like:</b></h4>
+        <p class="text-pre-wrap"><b>"{{complaint}}"</b></p>
+    </div>
+    <div class="text-center">
+        <button class="btn btn-success" id="submit-button">Submit</button>
+    </div>
 </div>
 <div>
-    <marquee id="note"><b>Note: Replies from DSW are truely confidential and hence will be reverted back via email.</b>
-    </marquee>
+    <marquee id="note"><b>Note: Replies from DSW are truely confidential and hence will be reverted back via email.</b></marquee>
 </div>
+<!--Javascript-->
+<script src="js/complaint.js"></script>
 </body>
 </html>
