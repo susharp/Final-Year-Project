@@ -22,4 +22,5 @@ p {
 }
 .text-pre-wrap {
     white-space: pre-wrap !important;
+    word-wrap: break-word;
 }
