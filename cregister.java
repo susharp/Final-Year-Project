@@ -17,6 +17,7 @@ import java.sql.SQLException;
 import java.util.Date;
 import java.sql.Timestamp;
 import javax.servlet.RequestDispatcher;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -51,7 +52,7 @@ public class cregister extends HttpServlet {
             
             int i = ps.executeUpdate();
             if (i >= 1) {
-                request.setAttribute("status", "thank you for your complaint ");
+                request.setAttribute("status", "thank you for  Registering your complaint. ");
 
             } else {
                 request.setAttribute("status", "Sorry, Server Problem !");
@@ -64,5 +65,17 @@ public class cregister extends HttpServlet {
             out.println(e);
         }
 
+    }
+     @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        session.removeAttribute("id");
+        response.sendRedirect("index.jsp");
+        processRequest(request, response);
+    }
+
+    private void processRequest(HttpServletRequest request, HttpServletResponse response) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
