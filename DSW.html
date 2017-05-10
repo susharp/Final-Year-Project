@@ -51,8 +51,11 @@
     </div>
     <span onClick="openNav()">&#9776;</span>
     <h3 class="text-center">Write a personal message to <span id="mark">Dean Student Welfare</span></h3>
+    <div class="pull-right">
+        <label><small>Max. of 300 words are allowed.</small></label>
+    </div>
     <div>
-        <textarea class="form-control text-center" placeholder="Write here." ng-model="complaint"></textarea>
+        <textarea maxlength="300" class="form-control text-center" placeholder="Write here." ng-model="complaint"></textarea>
     </div>
     <div>
         <h4><b>Your complaint looks like:</b></h4>
