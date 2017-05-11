@@ -2,10 +2,12 @@
 <html>
     <head>
                                 <!--Css-->
-        <link rel="stylesheet" href="css/complaint.css">
+
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="bootstrap-select-master/bootstrap-select-master/dist/css/bootstrap-select.min.css">
+        <link rel="stylesheet" href="css/complaint.css">
         <script src="js/jquery-3.1.1.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script>
@@ -47,56 +49,52 @@
         <h2>Post a Complaint</h2>
             <span onClick="openNav()">&#9776;</span>
         <div>
-        <form>
-        <div class="form-group text-center">
+        <div class="text-center">
             <label class="form-inline">Category:</label>
-            <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Pick a Category
-                    <span class="caret"></span></button>
-                    <ul class="dropdown-menu" id="dropdown">
-                        <li class="text-center"><a href="#" tabindex="-1">Mess</a></li>
-                        <li class="text-center"><a href="#" tabindex="-1">Hostel</a></li>
-                        <li class="text-center"><a href="#" tabindex="-1">Student Resource Center (SRC)</a></li>
-                        <li class="text-center"><a href="#" tabindex="-1">Transport</a></li>
-                        <li class="text-center"><a href="#" tabindex="-1">MI Room</a></li>
-                        <li class="text-center"><a href="#" tabindex="-1">Food Trucks</a></li>
-                        <li class="text-center"><a href="#" tabindex="-1">Fees</a></li>
-                        <li class="text-center"><a href="#" tabindex="-1">Library</a></li>
-                        <li class="dropdown-submenu text-center">
-                            <a href="#" tabindex="-1" class="test">Academic Block <span class="caret"></span></a>
-                            <ul class="dropdown-menu" id="dropdown-submenu">
-                                <li class="text-center"><a href="#" tabindex="-1">ASET</a></li>
-                                <li class="text-center"><a href="#" tabindex="-1">ABS</a></li>
-                                <li class="text-center"><a href="#" tabindex="-1">ALS</a></li>
-                                <li class="text-center"><a href="#" tabindex="-1">AIIT</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+            <div class="container">
+                <select id="options" onchange="member(this.id,'label-mem')" data-live-search="true">
+                    <optgroup label="Food and Hostel">
+                        <option class="text-center" id="Mess" value="Mess">Mess</option>
+                        <option class="text-center" id="Food Trucks" value="Food Trucks">Food Trucks</option>
+                        <option class="text-center" id="Hostel" value="Hostel">Hostel</option>
+                    </optgroup>
+                    <optgroup label="Medical">
+                        <option class="text-center" id="MI Room" value="MI Room">MI Room</option>
+                    </optgroup>
+                    <optgroup label="Transport and Security">
+                        <option class="text-center" id="Transport" value="Transport">Transport</option>
+                    </optgroup>
+                    <optgroup label="Fees and Accounts">
+                        <option class="text-center" id="Fees" value="Fees and Accounts">Fees and Accounts</option>
+                    </optgroup>
+                    <optgroup label="Other">
+                        <option class="text-center" id="Library" value="Library">Library</option>
+                        <option class="text-center" id="SRC" value="SRC">Student Resource Center (SRC)</option>
+                        <option class="text-center" id="IT" value="IT">IT</option>
+                    </optgroup>
+                </select>
                 </div>
             <div class="top">
                 <label>Complaint will be forwarded to: </label>
                 <div>
-                // Has to be done from backend<br>
-                // The complaint will be forwarded to the concerned faculty/ concerned member<br>
+                    <label class="concerned-member" id="label-mem"></label>
                 </div>
             </div>
             <div class="top form-group">
                 <div>
                     <label>Please tell in brief about the complaint: </label>
                 </div>
-                <div >
-                    <label class="pull-right"><small>Max. of 200 Words are allowed</small></label>
-                </div>
+                <label class="pull-right"><span class="red">*</span><small>Max. of 200 Words are allowed</small></label>
                 <div>
-                    <textarea maxlength="200" class="form-control"></textarea>
+                    <textarea title="" maxlength="200" class="form-control"></textarea>
                 </div>
             </div>
             <button class="btn btn-success">Submit</button>
         </div>
-        </form>
         </div>
         </div>
                                 <!--Javascript-->
-<script src="js/complaint.js"></script>
+    <script src="bootstrap-select-master/bootstrap-select-master/dist/js/bootstrap-select.min.js"></script>
+    <script src="js/complaint.js"></script>
     </body>
 </html>
