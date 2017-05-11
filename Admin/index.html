@@ -32,7 +32,6 @@
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="index.html">Home</a>
     <a href="index.html"><i class="fa fa-envelope-open-o" aria-hidden="true"></i> Complaints</a>
-    <a href="status.html"><i class="fa fa-pencil" aria-hidden="true"></i> Change Status</a>
 </div>
 <div id="main">
     <div class="container-fluid">
@@ -51,7 +50,7 @@
     <span onClick="openNav()">&#9776;</span>
     <div class="container">
         <div class="text-center">
-            <table class="table table-responsive">
+            <table class="table table-bordered table-responsive">
                 <thead>
                 <tr>
                     <th class="text-center">S.No</th>
@@ -59,6 +58,7 @@
                     <th class="text-center">Category</th>
                     <th class="text-center">Complaint</th>
                     <th class="text-center">Concerned Member</th>
+                    <th class="text-center">Status</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -66,8 +66,15 @@
                     <td>1</td>
                     <td>Prateek Gogia</td>
                     <td>Hostel</td>
-                    <td>WiFi nahi chal raha bc!</td>
+                    <td>WiFi not working.</td>
                     <td><a href="mailto:gogia.prateek@hotmail.com">Mr. IT Uncle</a></td>
+                    <td>
+                        <select class="form-control">
+                            <option>Pending</option>
+                            <option>Processing</option>
+                            <option>Resolved</option>
+                        </select>
+                    </td>
                 </tr>
                 </tbody>
             </table>
