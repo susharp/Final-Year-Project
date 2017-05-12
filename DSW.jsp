@@ -1,9 +1,3 @@
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.Statement"%>
-<%@page import="java.sql.PreparedStatement"%>
-<%@page import="factory.connfac"%>
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.Connection"%>
 <!DOCTYPE html>
 <html ng-app="DSWMatter">
 <head>
@@ -11,19 +5,19 @@
     <link rel="stylesheet" href="css/complaint.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="css/status.css">
     <link rel="stylesheet" href="font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/dsw.css">
     <script src="js/jquery-3.1.1.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/angular.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/DSWController.js"></script>
-    <script type = "text/javascript" >
+        <script type = "text/javascript" >
 function disableBackButton()
 {
 window.history.forward();
 }
-setTimeout("disableBackButton()", 0);
+setTimeout("disableBackButton()", 5);
 </script>
     <script>
         $(document).ready(function(){
@@ -38,14 +32,14 @@ setTimeout("disableBackButton()", 0);
 <body ng-controller="DSWController">
 <nav class="navbar">
     <div class="navbar-inner">
-        <a><img class="img-responsive" src="images/logo.png" width="100%" height="100%"></a>
+        <a><img src="images\logo.png" width="100%" height="100%"></a>
     </div>
 </nav>
 <div id="mySideNav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="#"> Profile</a>
+    <a href="#">Home</a>
     <a href="complaint.jsp"><i class="fa fa-envelope-open-o" aria-hidden="true"></i> Post a Complaint</a>
-    <a href="#"><i class="fa fa-tasks" aria-hidden="true"></i> Check Status</a>
+    <a href="status.jsp"><i class="fa fa-tasks" aria-hidden="true"></i> Check Status</a>
     <a href="DSW.jsp"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Write to DSW</a>
 </div>
 <div id="main">
@@ -67,77 +61,27 @@ setTimeout("disableBackButton()", 0);
                      <%
                         out.print(email);
                         %>
-               
             </label>
         </div>
     </div>
-    <h2 class="text-center">Complaint Status</h2>
     <span onClick="openNav()">&#9776;</span>
-    <form action="cstatus" method="post">
-    <div class="status-label">
-        <table class="table table-striped" >
-            <tr class="info">
-                <td>
-        <div>
-            <label class="label-in">Last complaint posted:   
-            
-                <%
-                
-                    
-                    String id = session.getAttribute("id").toString();
-                    String cat="",dat="";
-                    Connection con = null;
-                    Class.forName("com.mysql.jdbc.Driver");
-             con= DriverManager.getConnection("jdbc:mysql://localhost:3306/complaint management?zeroDateTimeBehavior=convertToNull","root","nanu");
-                    String q = "select comp_cat,comp_date from complaints where amity_id='"+id+"' order by comp_date desc";
-            Statement stmt = con.createStatement();
-           ResultSet rs =stmt.executeQuery(q);
-            while(rs.first())
-            {
-                cat = rs.getString(1);
-                dat = rs.getString(2);
-               break;
-            }
-                
-               
-                
-                %>
-            
-            
-            
-            
-            </label>
-        
-            <label class="label-out"></label>
-        </div>
-                <td>
-                    <% out.println(cat);%> 
-                    
-                </td>
-                <td>
-                    
-                    <%out.println(dat);%>
-                </td>
-            
-        </tr>
-        <tr class="active">
-            <td>
-        <div>
-            <label class="label-in">Current Status: </label>
-            <label class="label-out"></label>
-        </div>
-            </td>
-            <td>
-                
-            </td>
-        </tr>
-        
-    </table>
+    <h3 class="text-center">Write a personal message to <span id="mark">Dean Student Welfare</span></h3>
+    <form action="review" method="post">
+    <div>
+        <textarea class="form-control text-center" placeholder="Write here." name="textarea" ng-model="complaint"></textarea>
     </div>
-            </form>
-
+    <div>
+        <h4><b>Your complaint looks like:</b></h4>
+        <p class="text-pre-wrap"><b>"{{complaint}}"</b></p>
+    </div>
+    <div class="text-center">
+        <button class="btn btn-success" id="submit-button">Submit</button>
+    </div>
+    </form>
 </div>
-
+<div>
+    <marquee id="note"><b>Note: Replies from DSW are truely confidential and hence will be reverted back via email.</b></marquee>
+</div>
 <!--Javascript-->
 <script src="js/complaint.js"></script>
 </body>

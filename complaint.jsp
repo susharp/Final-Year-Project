@@ -44,7 +44,7 @@
                     <div class="dropdown-container">
                         <button class="btn btn-default pull-right info-button dropdown-toggle" data-toggle="dropdown">&#9776;</button>
                         <ul class="dropdown-menu pull-right" id="dropdown-top">
-                            <li><a href="cuserpass.jsp" tabindex="-1">Change Profile</a></li>
+                            <li><a href="profile.jsp" tabindex="-1">Change Profile</a></li>
                             <li><a href="usertest" tabindex="-1">Sign out</a></li>
                         </ul>
                     </div>
