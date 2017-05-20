@@ -95,15 +95,10 @@ public class usertest extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession(false);
+        HttpSession session = request.getSession();
         session.removeAttribute("id");
-        response.setHeader("Cache-Control","no-cache"); 
-        response.setHeader("Pragma","no-cache"); 
-        response.setDateHeader ("Expires", -1); 
-        session.setAttribute("id",null); 
         response.sendRedirect("index.jsp");
         processRequest(request, response);
-        
     }
 
     /**

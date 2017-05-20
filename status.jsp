@@ -18,13 +18,6 @@
     <script src="js/angular.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/DSWController.js"></script>
-    <script type = "text/javascript" >
-function disableBackButton()
-{
-window.history.forward();
-}
-setTimeout("disableBackButton()", 0);
-</script>
     <script>
         $(document).ready(function(){
             $('.dropdown-submenu a.test').on("click", function(e){
