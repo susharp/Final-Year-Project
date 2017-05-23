@@ -1,0 +1,45 @@
+textarea {
+    border-color: dodgerblue;
+    text-align: start;
+    margin-top: 15px;
+    font-size: 36px;
+    resize: none;
+    height: 20%;
+}
+p {
+    text-align: left;
+}
+#mark {
+    background-color: #F6A924;
+    color: darkblue;
+    font-weight: 500;
+}
+#submit-button {
+    margin-top: 10px;
+}
+#note {
+    font-size: 16px;
+}
+#image img {
+    height: 200px;
+    margin-left: 40%;
+    margin-top: -5%;
+}
+.text-pre-wrap {
+    white-space: pre-wrap !important;
+    word-wrap: break-word;
+}
+.profile-img {
+    margin-left: 43%;
+    margin-top: -5%;
+}
+.details {
+    margin-left: 35%;
+    margin-top: 10px;
+}
+.details label {
+    font-size: 24px;
+}
+.details a {
+    font-size: 30px;
+}

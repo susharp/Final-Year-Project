@@ -1,0 +1,39 @@
+textarea {
+    border-color: dodgerblue;
+    text-align: start;
+    margin-top: 15px;
+    font-size: 36px;
+    resize: none;
+    height: 20%;
+}
+p {
+    text-align: left;
+}
+#mark {
+    background-color: #F6A924;
+    color: darkblue;
+    font-weight: 500;
+}
+#submit-button {
+    margin-top: 10px;
+}
+#note {
+    font-size: 16px;
+}
+.text-pre-wrap {
+    white-space: pre-wrap !important;
+    word-wrap: break-word;
+}
+.status-label {
+    margin-left: 10%;
+}
+.status-label label {
+    margin-top: 20px;
+    font-size: 19px;
+}
+.label-in {
+ color: #2e6da4;
+}
+.label-out {
+    color: #333333;
+}
